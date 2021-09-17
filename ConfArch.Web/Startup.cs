@@ -32,7 +32,15 @@ namespace ConfArch.Web
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
                     assembly => assembly.MigrationsAssembly(typeof(ConfArchDbContext).Assembly.FullName)));
 
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme ).AddCookie();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie();
+
+            //services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            //   .AddCookie(o => o.Events = new CookieAuthenticationEvents
+            //   {
+
+            //       OnValidatePrincipal = async (c) => { c.RejectPrincipal(); }
+            //   });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
