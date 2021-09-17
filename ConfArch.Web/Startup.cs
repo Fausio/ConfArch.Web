@@ -41,6 +41,8 @@ namespace ConfArch.Web
 
             //       OnValidatePrincipal = async (c) => { c.RejectPrincipal(); }
             //   });
+
+            //https://developers.google.com/identity/sign-in/web/sign-in
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
